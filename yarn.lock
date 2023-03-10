@@ -9163,6 +9163,11 @@ typedarray-to-buffer@^3.1.5:
   dependencies:
     is-typedarray "^1.0.0"
 
+uimini@^2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/uimini/-/uimini-2.0.8.tgz#6e250e498fa3faed0faae27cd8efb6e944ce6b65"
+  integrity sha512-qQxmla9M1Gjt0nqANbdh/Ji0cz9iYbbCYXftcaMYY0WlwhfQdiut8x/cJFkZaCDtV6xuFYTwcMA/MY6VO3uKZw==
+
 unbox-primitive@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/unbox-primitive/-/unbox-primitive-1.0.2.tgz#29032021057d5e6cdbd08c5129c226dff8ed6f9e"

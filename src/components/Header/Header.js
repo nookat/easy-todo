@@ -1,34 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
+
 import {ReactComponent as LogoIcon} from '../../assets/img/logo.svg';
 
 import {Container} from '../../layouts';
 
-const Header = ({ isLogo, isFixed }) => {
+const Header = ({ isLogo, className, ...attrs }) => {
+  const classes = classNames(
+    'Header',
+    className
+  );
+
   return (
-    <Container>
-      <div className={`Header flex justify-between py-2 mb-4 ${isFixed && 'isFixed'}`}>
-        <div className="Logo">
-          {isLogo && <LogoIcon/>}
-          <span>React app</span>
+    <header className={classes} {...attrs}>
+      <Container>
+        <div className="flex justify-between py-2 mb-4">
+          <div className="Logo">
+            {isLogo && <LogoIcon/>}
+            <span>React app</span>
+          </div>
+          <ul className="ui-button-group">
+            <li className="ui-link">Home</li>
+            <li className="ui-link">About</li>
+          </ul>
         </div>
-        <ul className="ui-button-group">
-          <li className="ui-link">Home</li>
-          <li className="ui-link">About</li>
-        </ul>
-      </div>
-    </Container>
+      </Container>
+    </header>
   );
 };
 
 Header.propTypes = {
   isLogo: PropTypes.bool,
-  isFixed: PropTypes.bool
+  isFixed: PropTypes.bool,
+  className: PropTypes.string,
+  attrs: PropTypes.object
 };
 
 Header.defaultProps = {
   isLogo: false,
-  isFixed: true
+  isFixed: true,
+  className: ''
 };
 
 export default Header;

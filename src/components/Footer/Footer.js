@@ -1,9 +1,13 @@
 import React from 'react';
 
+import {Container} from '../../layouts';
+
 const Footer = () => (
-  <div className="Footer">
-    <p>footer</p>
-  </div>
+  <footer className="Footer">
+    <Container>
+      <p>footer</p>
+    </Container>
+  </footer>
 );
 
 export default Footer;

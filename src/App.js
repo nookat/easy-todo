@@ -6,7 +6,7 @@ import {Container} from './layouts';
 
 const App = () => (
   <div className="ui-wrapper">
-    <Header isLogo/>
+    <Header isLogo className="main-header"/>
     <div className="ui-content-wrapper">
       <Container>
         <p className="text-2xl">Template</p>

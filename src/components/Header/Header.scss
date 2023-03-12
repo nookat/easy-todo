@@ -1,0 +1,13 @@
+.MenuList {
+  display: flex;
+
+  a {
+    text-decoration: none;
+
+    &.active {
+      opacity: .8;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}

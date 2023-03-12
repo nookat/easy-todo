@@ -1,10 +1,34 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import {ReactComponent as LogoIcon} from '../../assets/img/logo.svg';
 
 import {Container} from '../../layouts';
+
+import './Header.scss';
+
+const menuLinks = [
+  {
+    title: 'HomePage',
+    alias: '/'
+  },
+  {
+    title: 'AboutPage',
+    alias: '/about'
+  }
+];
+
+const menuItems = menuLinks.map(item => (
+  <li key={item.alias}>
+    <NavLink to={item.alias}>
+      <div className="ui-button isLink">{item.title}</div>
+    </NavLink>
+  </li>
+));
+
+const menuList = <ul className="MenuList">{menuItems}</ul>;
 
 const Header = ({ isLogo, className, ...attrs }) => {
   const classes = classNames(
@@ -20,10 +44,7 @@ const Header = ({ isLogo, className, ...attrs }) => {
             {isLogo && <LogoIcon/>}
             <span>React app</span>
           </div>
-          <ul className="ui-button-group">
-            <li className="ui-link">Home</li>
-            <li className="ui-link">About</li>
-          </ul>
+          {menuList}
         </div>
       </Container>
     </header>

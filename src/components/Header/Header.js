@@ -32,14 +32,12 @@ const Header = ({ isLogo, className, ...attrs }) => {
 
 Header.propTypes = {
   isLogo: PropTypes.bool,
-  isFixed: PropTypes.bool,
   className: PropTypes.string,
   attrs: PropTypes.object
 };
 
 Header.defaultProps = {
   isLogo: false,
-  isFixed: true,
   className: ''
 };
 

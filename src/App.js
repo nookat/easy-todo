@@ -1,14 +1,14 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import './assets/scss/main.scss';
+import 'assets/scss/main.scss';
 
 //pages
-import AboutPage from './pages/AboutPage';
-import HomePage from './pages/HomePage';
-import NotFoundPage from './pages/NotFoundPage';
+import AboutPage from 'pages/AboutPage';
+import HomePage from 'pages/HomePage';
+import NotFoundPage from 'pages/NotFoundPage';
 
 // components
-import {Header, Footer} from './components';
+import {Header, Footer} from 'components';
 
 const App = () => (
   <div className="ui-wrapper">

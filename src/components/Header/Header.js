@@ -3,9 +3,9 @@ import {NavLink} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import {ReactComponent as LogoIcon} from '../../assets/img/logo.svg';
+import {ReactComponent as LogoIcon} from 'assets/img/logo.svg';
 
-import {Container} from '../../layouts';
+import {Container} from 'layouts';
 
 import './Header.scss';
 

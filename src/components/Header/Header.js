@@ -9,6 +9,8 @@ import {Container} from 'layouts';
 
 import './Header.scss';
 
+import {app} from '_config';
+
 const menuLinks = [
   {
     title: 'HomePage',
@@ -42,7 +44,7 @@ const Header = ({ isLogo, className, ...attrs }) => {
         <div className="flex justify-between py-2 mb-4">
           <div className="Logo">
             {isLogo && <LogoIcon/>}
-            <span>React app</span>
+            <span>{app.name}</span>
           </div>
           {menuList}
         </div>

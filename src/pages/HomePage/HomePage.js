@@ -5,12 +5,14 @@ import {Form} from 'components/Todo';
 import {List} from 'components/Todo';
 
 import todos from 'seeders/todos.json';
+import tags from 'seeders/tags.json';
 
 const HomePage = () => {
   // data from localStorage
   const localItems = JSON.parse(localStorage.getItem('items'));
   // final output
   const items_ = localItems?.length ? localItems : todos;
+  const tags_ = tags;
   // state
   const [items, setItems] = useState(items_ || []);
 
@@ -19,6 +21,7 @@ const HomePage = () => {
       ...items,
       item
     ];
+    console.log(items);
     setItems(newItems);
   };
 
@@ -55,7 +58,7 @@ const HomePage = () => {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit}/>
+      <Form onSubmit={handleSubmit} tags={tags_}/>
       <List items={items}
             onChangeItem={handleChangeItem}
             onRemoveItem={handleRemoveItem}

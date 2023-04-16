@@ -2,11 +2,13 @@
   {
     "id": 1,
     "title": "todo from seeder",
+    "tag": "react",
     "isChecked": false
   },
   {
     "id": 2,
     "title": "todo from seeder 2",
+    "tag": "vue",
     "isChecked": true
   }
 ]

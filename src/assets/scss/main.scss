@@ -17,5 +17,15 @@
   max-width: 1000px;
 }
 
+.tags {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+
 // helpers
 @import './helpers/_helpers';

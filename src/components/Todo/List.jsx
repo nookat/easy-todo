@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Tag} from 'components/Todo';
+
 const List = ({ items, onChangeItem, onRemoveItem }) => {
   return (
     <div className="view-sm flex flex-col">
@@ -16,6 +18,7 @@ const List = ({ items, onChangeItem, onRemoveItem }) => {
                   onChange={() => onChangeItem(item.id)}
                 />
                 <label htmlFor={item.id}>{item.title}</label>
+                <Tag title={item.tag}/>
               </div>
               <span
                 className="ui-link pl-2 text-sm"

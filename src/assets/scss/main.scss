@@ -13,5 +13,9 @@
   pointer-events: auto !important;
 }
 
+.ui-container {
+  max-width: 1000px;
+}
+
 // helpers
 @import './helpers/_helpers';

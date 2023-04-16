@@ -8,7 +8,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.9.0",
-    "uimini": "^2.0.8"
+    "uimini": "^2.0.8",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "node-sass": "^8.0.0",

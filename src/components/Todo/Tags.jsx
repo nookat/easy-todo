@@ -1,21 +1,25 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import classNames from 'classnames';
 
-const Tags = ({ items, isVertical, onTagClick }) => {
+const Tags = ({ items, isVertical = false, onTagClick }) => {
   const tagsClasses = classNames(
+    'tags',
     'ui-button-group',
-    'rembo',
-    isVertical ? 'isVertical' : false
+    isVertical
   )
 
   return (
     <ul className={tagsClasses}>
       {
-        items && items.map(({ id, title, isActive }) => (
-          <span className={`ui-tag ${isActive ? 'isActive' : ''}`}
-                key={id}
-                onClick={() => onTagClick(id)}>{title}</span>
-        ))
+        items && items.map(({ id, title, isActive }) => {
+          return <Fragment key={id}>
+              {onTagClick
+                ? <span className={`ui-tag ${isActive ? 'isActive' : ''}`}
+                         onClick={() => onTagClick(id)}>{title}</span>
+                : <span className="ui-tag">{title}</span>
+              }
+            </Fragment>
+        })
       }
     </ul>
   )

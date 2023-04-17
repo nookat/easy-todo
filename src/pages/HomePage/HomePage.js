@@ -5,18 +5,27 @@ import {Form} from 'components/Todo';
 import {List} from 'components/Todo';
 
 import todos from 'seeders/todos.json';
-import tags from 'seeders/tags.json';
+import tagItems from 'seeders/tags.json';
 
 const HomePage = () => {
   // data from localStorage
   const localItems = JSON.parse(localStorage.getItem('items'));
   // final output
   const items_ = localItems?.length ? localItems : todos;
-  const tags_ = tags;
+  const [tags, setTags] = useState(tagItems || []);
   // state
   const [items, setItems] = useState(items_ || []);
 
   const handleSubmit = (item) => {
+    const activeTags = tags.filter(tag => tag.isActive);
+
+    if (!activeTags.length) {
+      console.log('Невозможно создать задачу без тега');
+      return;
+    }
+
+    item.tags = activeTags;
+
     const newItems = [
       ...items,
       item
@@ -51,14 +60,32 @@ const HomePage = () => {
     setItems(newItems);
   };
 
+  // select tag
+  const handleTagClick = (id) => {
+    const newTags = tags.map(tag => {
+      if (tag.id === id) {
+        tag.isActive = !tag.isActive;
+      }
+
+      return tag;
+    });
+
+    setTags(newTags);
+  }
+
   useEffect(() => {
     // console.log(items);
     localStorage.setItem('items', JSON.stringify(items));
+    const defaultTags = tags.map(tag => {
+      tag.isActive = false;
+      return tag;
+    });
+    setTags(defaultTags);
   }, [items]);
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit} tags={tags_}/>
+      <Form onSubmit={handleSubmit} tags={tags} onTagClick={handleTagClick}/>
       <List items={items}
             onChangeItem={handleChangeItem}
             onRemoveItem={handleRemoveItem}

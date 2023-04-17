@@ -3,12 +3,31 @@
     "id": 1,
     "title": "todo from seeder",
     "tag": "react",
-    "isChecked": false
+    "isChecked": false,
+    "tags": [
+      {
+        "id": 21,
+        "title": "react",
+        "isActive": false
+      },
+      {
+        "id": 22,
+        "title": "vue",
+        "isActive": false
+      }
+    ]
   },
   {
     "id": 2,
     "title": "todo from seeder 2",
     "tag": "vue",
-    "isChecked": true
+    "isChecked": true,
+    "tags": [
+      {
+        "id": 23,
+        "title": "node js",
+        "isActive": false
+      }
+    ]
   }
 ]

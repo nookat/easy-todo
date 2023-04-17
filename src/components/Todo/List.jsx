@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Tag} from 'components/Todo';
+import {Tags} from 'components/Todo';
 
 const List = ({ items, onChangeItem, onRemoveItem }) => {
   return (
@@ -18,7 +18,7 @@ const List = ({ items, onChangeItem, onRemoveItem }) => {
                   onChange={() => onChangeItem(item.id)}
                 />
                 <label htmlFor={item.id}>{item.title}</label>
-                <Tag title={item.tag}/>
+                <Tags items={item.tags}/>
               </div>
               <span
                 className="ui-link pl-2 text-sm"
